@@ -11,6 +11,6 @@ This should be considered Beta software.
 - curl
 
 ## Usage
-`deezersearch.sh [TYPE] [QUERY]`
-[TYPE] is one of three: track, album, artist
+`deezersearch.sh [TYPE] [QUERY]`  
+[TYPE] is one of three: track, album, artist  
 [QUERY] is the search term
