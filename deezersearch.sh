@@ -1,15 +1,13 @@
 #!/bin/sh
 
-[ $1=="-h" ] | [ $1=="--help" ] && echo -e "deezersearch.sh [TYPE] [QUERY]\n[TYPE] is one of three: track, album, artist\n[QUERY] is the search term" && exit
-
-
+[ "$1" == "-h" ] && echo -e "deezersearch.sh [TYPE] [QUERY]\n[TYPE] is one of three: track, album, artist\n[QUERY] is the search term" && exit
 
 guicmd='fzf --no-info --height=6'
 
 [ -z $1 ] && type=$(echo -e "track\nalbum\nplaylist" | $guicmd ) || type="$1"
 [ -z $type ] && exit
 
-[ -z $2 ] && echo -n "Search: " && read query || query="$2"
+[ -z "$2" ] && echo -n "Search: " && read query || query="$2"
 
 query=$(sed \
 	-e 's| |%20|g'\
